@@ -253,6 +253,8 @@ while True:
             # Buy-Sell datası oluşturma 4H
             buysell_data_4h = {"Time": new_data["time"], "Buy": buy, "Sell": sell}
             result_4h = pd.DataFrame(buysell_data_4h)
+            result_4h = result_4h.reset_index()
+            result_4h.drop(["index"],axis = 1,inplace = True)
             index_4h = result_4h.iloc[:, 1:].dropna(how="all").index
             result_4h = result_4h.iloc[index_4h,]
             if result_4h["Buy"][0:1].isna().bool() == True:
