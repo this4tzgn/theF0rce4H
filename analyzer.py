@@ -1,4 +1,4 @@
-test_timer = 54
+test_timer = 0
 timer = 0
 
 #!/usr/bin/env python
@@ -72,7 +72,7 @@ def reshaper():
                 for item in sell_signal:
                     file.write(str(item))
                     file.write("\n")
-def get_data(coin,money="USDT",api = "1989798748:AAHRBAP34mVJ1bIvCpRfgs17XTr_SegAtnU",day_hour = "hour"):
+def get_data(coin,money="USDT",api = "114982364c3cb0a2410f7a8871ce4dff8af75a024ae9ca5500e413c11d9ed843",day_hour = "hour"):
    # print(coin,end=": ")
     #api = input("Enter your api adress : ")
     #day_hour = input('Choose your time interval(day/hour) : ')
