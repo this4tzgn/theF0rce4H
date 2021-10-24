@@ -204,7 +204,7 @@ while True:
             if numpy.isnan(result.iloc[result.shape[0] - 1,]["Buy"]) == False:
                 databaseFile.sql_update(databaseFile.connector,items,str(result["Time"].iloc[-1]),str(round((result.iloc[result.shape[0] - 1,]["Buy"]),3)),status="buy")
                 databaseFile.sql_update(databaseFile.connector,items,str(result["Time"].iloc[-1]),"nosignal",status="sell")
-                print(items+": buy at ----> "+str(round((result.iloc[result.shape[0] - 1,]["Buy"]),3)))
+                print(items+": Buy 1H ----> "+str(round((result.iloc[result.shape[0] - 1,]["Buy"]),3)))
                 if str(round(result.iloc[result.shape[0] - 1,]["Buy"], 3)) != str(last_buy_signal[items]):
                     print("bot tetiklendi")
                     bot.send_message(chat_id,items+": buy at ----> "+str(round((result.iloc[result.shape[0] - 1,]["Buy"]),3)))
@@ -212,7 +212,7 @@ while True:
             else:
                 databaseFile.sql_update(databaseFile.connector, items, str(result["Time"].iloc[-1]),str(round((result.iloc[result.shape[0] - 1,]["Buy"]), 3)), status="sell")
                 databaseFile.sql_update(databaseFile.connector, items, str(result["Time"].iloc[-1]), "nosignal", status="buy")
-                print(items+": sell at ---->:"+str(round((result.iloc[result.shape[0] - 1,]["Sell"]),3)))
+                print(items+": Sell 1H ---->:"+str(round((result.iloc[result.shape[0] - 1,]["Sell"]),3)))
                 if str(round(result.iloc[result.shape[0] - 1,]["Sell"], 3)) != str(last_sell_signal[items]):
                     print("bot tetiklendi")
                     bot.send_message(chat_id, items + ": sell at ----> " + str(round((result.iloc[result.shape[0] - 1,]["Sell"]), 3)))
@@ -261,7 +261,7 @@ while True:
             if numpy.isnan(result_4h.iloc[result_4h.shape[0] - 1,]["Buy"]) == False:
                 databaseFile.sql_update(databaseFile.connector,items,str(result_4h["Time"].iloc[-1]),str(round((result_4h.iloc[result_4h.shape[0] - 1,]["Buy"]),3)),status="buy")
                 databaseFile.sql_update(databaseFile.connector,items,str(result_4h["Time"].iloc[-1]),"No signal",status="sell")
-                print(items+": buy at ----> "+str(round((result_4h.iloc[result_4h.shape[0] - 1,]["Buy"]),3)))
+                print(items+": Buy 4H ----> "+str(round((result_4h.iloc[result_4h.shape[0] - 1,]["Buy"]),3)))
                 if str(round(result_4h.iloc[result_4h.shape[0] - 1,]["Buy"], 3)) != str(last_buy_signal_4h[items]):
                     print("bot tetiklendi")
                     #telegramBotAfgan.bot.send_message(telegramBotAfgan.chat_id,items+": buy at ----> "+str(round((result.iloc[result.shape[0] - 1,]["Buy"]),3)))
@@ -269,7 +269,7 @@ while True:
             else:
                 databaseFile.sql_update(databaseFile.connector, items, str(result_4h["Time"].iloc[-1]),str(round((result_4h.iloc[result_4h.shape[0] - 1,]["Buy"]), 3)), status="sell")
                 databaseFile.sql_update(databaseFile.connector, items, str(result_4h["Time"].iloc[-1]), "No signal", status="buy")
-                print(items+": sell at ---->:"+str(round((result_4h.iloc[result_4h.shape[0] - 1,]["Sell"]),3)))
+                print(items+": Sell 4H ---->:"+str(round((result_4h.iloc[result_4h.shape[0] - 1,]["Sell"]),3)))
                 if str(round(result_4h.iloc[result_4h.shape[0] - 1,]["Sell"], 3)) != str(last_sell_signal_4h[items]):
                     print("bot tetiklendi")
                     #telegramBotAfgan.bot.send_message(telegramBotAfgan.chat_id, items + ": sell at ----> " + str(round((result.iloc[result.shape[0] - 1,]["Sell"]), 3)))
